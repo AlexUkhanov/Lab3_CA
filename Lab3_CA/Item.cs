@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab3_CA
 {
-    class Item
+    public class Item
     {
         public double Cost { get; set; }
         public double Weight { get; set; }

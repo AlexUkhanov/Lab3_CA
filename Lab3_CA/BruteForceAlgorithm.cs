@@ -11,14 +11,14 @@ namespace Lab3_CA
         private List<Item> bestCombination;
         private double maxWeight;
         private double bestCost;
-        private long timeWork =0;
+        public long timeWork =0;
 
         public BruteForceAlgorithm(double cap_in)
         {
             maxWeight = cap_in;
         }
 
-        //Получить общий вес вещей из данного набора
+        //Get summary weight from this List<Item> it
         private double GetSummaryWeightFromItems(List<Item> it)
         {
             double res = 0;
@@ -29,7 +29,7 @@ namespace Lab3_CA
             return res;
         }
 
-        //Получить общую стоимость вещей из данного набора
+        //Get summary cost from this List<Item> it
         private double GetSummaryCostFromItems(List<Item> it)
         {
             double res = 0;
@@ -40,7 +40,7 @@ namespace Lab3_CA
             return res;
         }
 
-        //проверка на лучшее решение
+        //check for the best solution
         private void CheckSet(List<Item> items)
         {
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
@@ -67,7 +67,7 @@ namespace Lab3_CA
             timeWork = sw.ElapsedTicks;
         }
 
-        //создание всех перестановок рекурсивно
+        //creates all transpositions (recursion)
         public void MakeAllSets(List<Item> items)
         {
             if (items.Count > 0)

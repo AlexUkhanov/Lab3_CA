@@ -48,13 +48,16 @@
   <ItemGroup>
     <Compile Include="BruteForceAlgorithm.cs" />
     <Compile Include="GenerateSet.cs" />
+    <Compile Include="GeneticAlgorithm.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Knapsack.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Population.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">

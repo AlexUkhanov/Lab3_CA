@@ -135,6 +135,7 @@
             this.btGenetic.TabIndex = 5;
             this.btGenetic.Text = "Генетический алгоритм";
             this.btGenetic.UseVisualStyleBackColor = true;
+            this.btGenetic.Click += new System.EventHandler(this.btGenetic_Click);
             // 
             // label1
             // 
@@ -181,7 +182,6 @@
         private System.Windows.Forms.ColumnHeader Name_1;
         private System.Windows.Forms.ColumnHeader Weight_1;
         private System.Windows.Forms.ColumnHeader Cost_1;
-        private System.Windows.Forms.ListView LVOut;
         private System.Windows.Forms.ColumnHeader Name_2;
         private System.Windows.Forms.ColumnHeader Weight_2;
         private System.Windows.Forms.ColumnHeader Cost_2;
@@ -191,6 +191,7 @@
         private System.Windows.Forms.Button btGenetic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btClear;
+        private System.Windows.Forms.ListView LVOut;
     }
 }
 

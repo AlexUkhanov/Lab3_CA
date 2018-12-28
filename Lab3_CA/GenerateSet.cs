@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Lab3_CA
 {
-    //Генерирует изначальный список предметов
     class GenerateSet
     {
         Random rnd = new Random();
