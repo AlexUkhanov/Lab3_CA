@@ -11,7 +11,6 @@ namespace Lab3_CA
         private List<Item> bestCombination;
         private double maxWeight;
         private double bestCost;
-        public long timeWork =0;
 
         public BruteForceAlgorithm(double cap_in)
         {
@@ -43,9 +42,6 @@ namespace Lab3_CA
         //check for the best solution
         private void CheckSet(List<Item> items)
         {
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            sw.Start();
-
             if (bestCombination == null)
             {
                 if (GetSummaryWeightFromItems(items) <= maxWeight)
@@ -62,9 +58,6 @@ namespace Lab3_CA
                     bestCost = GetSummaryCostFromItems(items);
                 }
             }
-
-            sw.Stop();
-            timeWork = sw.ElapsedTicks;
         }
 
         //creates all transpositions (recursion)

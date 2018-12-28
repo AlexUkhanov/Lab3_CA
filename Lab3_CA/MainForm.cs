@@ -36,11 +36,14 @@ namespace Lab3_CA
         {
             try
             {
+                System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+                sw.Start();
                 BruteForceAlgorithm bf = new BruteForceAlgorithm(Convert.ToDouble(tbCapacity.Text));
                 bf.MakeAllSets(listItems);
+                sw.Stop();
                 List<Item> solve = bf.GetBest();
                 if (solve == null)
-                    MessageBox.Show("Решение отсутствует. Время выполнения: "+bf.timeWork+" мс");
+                    MessageBox.Show("Решение отсутствует. Время выполнения: "+sw.ElapsedTicks+" мс");
                 else
                 {
                     LVOut.Items.Clear();
@@ -48,7 +51,7 @@ namespace Lab3_CA
                     {
                         LVOut.Items.Add(new ListViewItem(new string[] { i.Name, i.Weight.ToString(), i.Cost.ToString() }));
                     }
-                    MessageBox.Show("Время выполнения: " + bf.timeWork + " мс");
+                    MessageBox.Show("Время выполнения: " + sw.ElapsedTicks + " мс");
                 }
             }
             catch (Exception ex)
@@ -69,14 +72,17 @@ namespace Lab3_CA
         {
             try
             {
+                System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+                sw.Start();
                 capacity = Convert.ToDouble(tbCapacity.Text);
                 Population pop = new Population(50, true);
-                // Evolve population for 150 generations
+                // Evolve population for 100 generations
                 pop = GeneticAlgorithm.evolvePopulation(pop);
-                for (int i = 0; i < 150; i++)
+                for (int i = 0; i < 100; i++)
                 {
                     pop = GeneticAlgorithm.evolvePopulation(pop);
                 }
+                sw.Stop();
                 bool[] solution = pop.getFittest().getObjects();
                 bool flag = false;
                 foreach(bool i in solution)
@@ -88,7 +94,7 @@ namespace Lab3_CA
                     }
                 }
                 if (!flag)
-                    MessageBox.Show("Решение отсутствует");
+                    MessageBox.Show("Решение отсутствует. Время выполнения: " + sw.ElapsedTicks + " мс");
                 else
                 {
                     LVOut.Items.Clear();
@@ -99,6 +105,7 @@ namespace Lab3_CA
                             LVOut.Items.Add(new ListViewItem(new string[] { listItems[i].Name, listItems[i].Weight.ToString(), listItems[i].Cost.ToString() }));
                         }
                     }
+                    MessageBox.Show("Время выполнения: " + sw.ElapsedTicks + " мс");
                 }
             }
             catch (Exception ex)
