@@ -9,13 +9,13 @@ namespace Lab3_CA
     class Item
     {
         public double Cost { get; set; }
-        public double Weigth { get; set; }
+        public double Weight { get; set; }
         public string Name { get; set; }
 
-        public Item(string name_in,double weigth_in,double cost_in)
+        public Item(string name_in,double weight_in,double cost_in)
         {
             Name = name_in;
-            Weigth = weigth_in;
+            Weight = weight_in;
             Cost = cost_in;
         }
     }
